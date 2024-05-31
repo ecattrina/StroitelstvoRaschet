@@ -1,0 +1,71 @@
+﻿<Window x:Class="CocreteCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CocreteCalculator"
+        mc:Ignorable="d"
+        Title="Главная" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Левая сетка -->
+        <Grid Grid.Column="0" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Label "С какой фирмой заключаете контракт?" -->
+            <Label Grid.Row="0" Content="С какой фирмой заключаете контракт?" Margin="0,0,0,5"/>
+
+            <!-- Radio Buttons -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal">
+                <RadioButton Content="Альянс"/>
+                <RadioButton Content="Мегаполис" Margin="5,0,0,0"/>
+                <RadioButton Content="Умстрой" Margin="5,0,0,0"/>
+            </StackPanel>
+
+            <!-- Label "Сумма контракта 5000" -->
+            <Label Grid.Row="2" Content="Сумма контракта: 5000" Margin="0,10,0,5"/>
+
+            <!-- Label "Процент прибыли с контракта" и TextBox -->
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <Label Content="Процент прибыли с контракта:" Margin="0,0,5,0"/>
+                <TextBox Width="50"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Правая сетка -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Выпадающий список "Выбор материала" -->
+            <ComboBox Grid.Row="0" Width="150"/>
+
+            <!-- TextBox'ы "Цена" и "Количество" -->
+            <!-- Метка и текстовое поле для цены -->
+            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,10,0,0">
+                <Label Content="Цена:" Margin="0,0,5,0"/>
+                <TextBox Width="100"/>
+            </StackPanel>
+
+            <!-- Метка и текстовое поле для количества -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,5,0,0">
+                <Label Content="Количество:" Margin="0,0,5,0"/>
+                <TextBox Width="100"/>
+            </StackPanel>
+
+            <Button Grid.Row="4" Content="Добавить материал" Width="300" HorizontalAlignment="Left" Command="{Binding NewMaterialButton_Click}"/>
+        </Grid>
+    </Grid>
+</Window>

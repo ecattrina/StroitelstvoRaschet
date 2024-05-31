@@ -5,6 +5,10 @@ VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroitelstvoRaschet.Library", "StroitelstvoRaschet.Library.csproj", "{4BFB1D5A-ED87-48C2-A2DB-3EEBE5B7A3ED}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroitelstvoRaschet.Tests", "..\StroitelstvoRaschet.Tests\StroitelstvoRaschet.Tests.csproj", "{394485D4-F506-452B-90F5-C3916A444AAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroitelstvoRaschet.WpfApp", "..\StroitelstvoRaschet.WpfApp\StroitelstvoRaschet.WpfApp.csproj", "{7342ABA6-1130-48DB-9717-A8821440D513}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{4BFB1D5A-ED87-48C2-A2DB-3EEBE5B7A3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BFB1D5A-ED87-48C2-A2DB-3EEBE5B7A3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BFB1D5A-ED87-48C2-A2DB-3EEBE5B7A3ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{394485D4-F506-452B-90F5-C3916A444AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{394485D4-F506-452B-90F5-C3916A444AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{394485D4-F506-452B-90F5-C3916A444AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{394485D4-F506-452B-90F5-C3916A444AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7342ABA6-1130-48DB-9717-A8821440D513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7342ABA6-1130-48DB-9717-A8821440D513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7342ABA6-1130-48DB-9717-A8821440D513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7342ABA6-1130-48DB-9717-A8821440D513}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
