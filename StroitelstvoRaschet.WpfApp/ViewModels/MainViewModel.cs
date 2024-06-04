@@ -505,7 +505,7 @@ namespace CocreteCalculator.ViewModels
                         worksheet.Cells["A4"].Value = "Количество дней работы бригад";
                         worksheet.Cells["B4"].LoadFromCollection(_selectedBrigadesList.Select(brigade => brigade.DaysCount));
 
-                        worksheet.Cells["A5"].Value = "Тип фирмы";
+                        worksheet.Cells["A5"].Value = "Застройщик";
                         worksheet.Cells["B5"].Value = GetFirmName;
 
                         worksheet.Cells["A6"].Value = "Процент прибыли";
@@ -546,14 +546,14 @@ namespace CocreteCalculator.ViewModels
 						worksheet.Cells["B17"].Value = 100 * totalWorkPayment / totalCost;
 
 						worksheet.Cells["A18"].Value = "Стоимость бригады (общая), % от суммы";
-						worksheet.Cells["B14"].Value = 100 * totalBrigadeCost / totalCost;
+						worksheet.Cells["B18"].Value = 100 * totalBrigadeCost / totalCost;
 
 
-						worksheet.Cells["A18"].Value = "Стоимость материалов (общая), % от суммы";
-						worksheet.Cells["B18"].Value = 100 * totalMaterialCost / totalCost;
+						worksheet.Cells["A19"].Value = "Стоимость материалов (общая), % от суммы";
+						worksheet.Cells["B19"].Value = 100 * totalMaterialCost / totalCost;
 
-						worksheet.Cells["A18"].Value = "Прибыль фирмы, % от суммы";
-						worksheet.Cells["B18"].Value = 100 * companyIncome / totalCost;
+						worksheet.Cells["A20"].Value = "Прибыль фирмы, % от суммы";
+						worksheet.Cells["B20"].Value = 100 * companyIncome / totalCost;
 
 
 
