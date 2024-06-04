@@ -1,18 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore.Query;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace FinancialManagement.Models
+namespace CocreteCalculator.Models
 {
-	public class Material
-	{
-		public string Name { get; set; }
-		public string Brigade { get; set; }
-		public double CostPerUnit { get; set; }
-		public double Quantity { get; set; }
-	}
+    public class Material
+    {
+        [Key]
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        [NotMapped]
+        public double Price { get; set; }
+
+        [NotMapped]
+        public int Quantity { get; set; }
+
+        [NotMapped]
+        public double Total { get; set; }
+    }
 }

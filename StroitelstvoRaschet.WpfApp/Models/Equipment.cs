@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinancialManagement.Models
+namespace CocreteCalculator.Models
 {
-	public class Equipment
-	{
-		public string CompanyName { get; set; }
-		public double RentPerDay { get; set; }
-		public int DaysRented { get; set; }
-	}
+    public class Equipment
+    {
+        [Key]
+        public int Id { get; set; }
+        public string CompanyName { get; set; }
+        public double RentPerDay { get; set; }
+        public int DaysRented { get; set; }
+    }
 }

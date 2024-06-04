@@ -1,5 +1,5 @@
-﻿using FinancialManagement.Models;
-using FinancialManagement.ViewModels;
+﻿using CocreteCalculator.Models;
+using CocreteCalculator.ViewModels;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -11,20 +11,20 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CocreteCalculator
+namespace CocreteCalculator.Views
 {
-	/// <summary>
-	/// Interaction logic for NewMaterialWindow.xaml
-	/// </summary>
-	public partial class NewMaterialWindow : Window
-	{
-		public NewMaterialWindow()
-		{
-			InitializeComponent();
+    /// <summary>
+    /// Interaction logic for NewMaterialWindow.xaml
+    /// </summary>
+    public partial class NewMaterialWindow : Window
+    {
+        private NewMaterialWindow _currentWindow;
+        private MainViewModel _mainViewModel;
+        public NewMaterialWindow(MainViewModel mainViewModel)
+        {
+            InitializeComponent();
 
-			MaterialViewModel materialViewModel = new MaterialViewModel();
-
-			DataContext = materialViewModel;
-		}
-	}
+            DataContext = new NewMaterialViewModel(this, mainViewModel);
+        }
+    }
 }

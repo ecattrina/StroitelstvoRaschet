@@ -1,106 +1,117 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Numerics;
 
-namespace StroitelstvoRaschet.Library
+namespace CalculatorLib
 {
-	public class Calculate
+	public class CalculatorEngine
 	{
-		public static double MaterialCost(double K, double M)
+		private List<double> _materialCosts;
+		private List<int> _materialQuantities;
+		private List<double> _brigadeRates;
+		private List<int> _brigadeDaysCounts;
+		private double _firmPrice;
+		private double _profitPercent;
+		private double _architectorCost;
+		private double _constructorCost;
+		private double _engineerCost;
+		private double _apartmentArea;
+		public CalculatorEngine(List<double> materialCosts,
+			List<int> materialQuantities,
+			List<double> brigadeRates,
+			List<int> brigadeDaysCounts,
+			double firmPrice,
+			double profitPercent,
+			double architectorCost,
+			double constructorCost,
+			double engineerCost,
+			double apartmentArea
+		)
 		{
-			if (K <= 0)
-			{
-				throw new Exception("Введите стоимость единицы материала");
-			}
-			if (M <= 0)
-			{
-				throw new Exception("Введите количество материала");
-			}
-			double materialCost = K * M;
-			return materialCost;
+			_materialCosts = materialCosts;
+			_materialQuantities = materialQuantities;
+			_brigadeRates = brigadeRates;
+			_brigadeDaysCounts = brigadeDaysCounts;
+			_firmPrice = firmPrice;
+			_profitPercent = profitPercent;
+			_architectorCost = architectorCost;
+			_constructorCost = constructorCost;
+			_engineerCost = engineerCost;
+			_apartmentArea = apartmentArea;
 		}
-
-		public static double LaborCost(double R, double T)
+		public double CalculateTotalCost()
 		{
-			if (R <= 0)
+			double totalMaterialCost = 0;
+			double totalBrigadeCost = 0;
+
+			for (int i = 0; i < _materialCosts.Count; i++)
 			{
-				throw new Exception("Введите ставку оплаты труда рабочего в час");
+				totalMaterialCost += MaterialCost(_materialCosts[i], _materialQuantities[i]);
 			}
-			if (T <= 0)
+
+			for (int i = 0; i < _brigadeRates.Count; i++)
 			{
-				throw new Exception("Введите количество часов");
+				totalBrigadeCost += BrigadeCost(_brigadeRates[i], _brigadeDaysCounts[i]);
 			}
-			double laborCost = R * T;
-			return laborCost;
+
+			double totalFirmPrice = CompanyIncome(_firmPrice, _profitPercent);
+
+			double totalWorkerPaymentByArea = WorkerPaymentByArea(
+				_architectorCost,
+				_constructorCost,
+				_engineerCost,
+				_apartmentArea
+			);
+
+			return totalMaterialCost + totalBrigadeCost + totalFirmPrice + totalWorkerPaymentByArea;
 		}
 
-		public static double EquipmentRentCost(double O, double A)
+		public double CalculateAll(ref double totalMaterialCost, ref double totalBrigadeCost, ref double totalWorkPayment, ref double companyIncome)
 		{
-			if (O <= 0)
+			for (int i = 0; i < _materialCosts.Count; i++)
 			{
-				throw new Exception("Введите стоимость аренды оборудования в день");
+				totalMaterialCost += MaterialCost(_materialCosts[i], _materialQuantities[i]);
 			}
-			if (A <= 0)
-			{
-				throw new Exception("Введите количество дней");
-			}
-			double rentCost = O * A;
-			return rentCost;
-		}
 
-		public static double CompanyIncome(double S, double Pr)
+			for (int i = 0; i < _brigadeRates.Count; i++)
+			{
+				totalBrigadeCost += BrigadeCost(_brigadeRates[i], _brigadeDaysCounts[i]);
+			}
+
+			companyIncome = CompanyIncome(_firmPrice, _profitPercent);
+
+			totalWorkPayment = WorkerPaymentByArea(
+				_architectorCost,
+				_constructorCost,
+				_engineerCost,
+				_apartmentArea
+			);
+
+			return totalMaterialCost + totalBrigadeCost + companyIncome + totalWorkPayment;
+		}
+		public double MaterialCost(double cost, double quantity)
 		{
-			if (S <= 0)
-			{
-				throw new Exception("Введите сумму контракта");
-			}
-			if (Pr <= 0)
-			{
-				throw new Exception("Введите процент прибыли, который компания хочет получить");
-			}
-			double income = S * Pr;
-			return income;
+			return cost * quantity;
 		}
-
-		public static double WorkerPaymentByArea(double Ar, double Ko, double In, double De, double Sr)
+		public double BrigadeCost(double rate, double daysCount)
 		{
-			if (Ar < 0)
-			{
-				throw new Exception("Введите корректную оплату для архитектора");
-			}
-			if (Ko < 0)
-			{
-				throw new Exception("Введите корректную оплату для конструктора");
-			}
-			if (In < 0)
-			{
-				throw new Exception("Введите корректную оплату для инженера");
-			}
-			if (De < 0)
-			{
-				throw new Exception("Введите корректную оплату для дизайнера интерьера");
-			}
-			if (Sr <= 0)
-			{
-				throw new Exception("Введите планируемую площадь дома");
-			}
-			double workerPayment = (Ar + Ko + In + De) * Sr;
-			return workerPayment;
+			return rate * daysCount;
 		}
 
-		public static double TotalCost(double K, double M, double R, double T, double O, double A, double S, double Pr, double Ar, double Ko, double In, double De, double Sr)
-		{	
-			double materialCost = MaterialCost(K, M);
-			double laborCost = LaborCost(R, T) + WorkerPaymentByArea(Ar, Ko, In, De, Sr);
-			double rentCost = EquipmentRentCost(O, A);
-			double companyIncome = CompanyIncome(S, Pr);
-			double totalCost = materialCost + laborCost + rentCost + companyIncome;
-			return totalCost;
+		public static double CompanyIncome(double firmPrice, double profitPercent)
+		{
+			return firmPrice * profitPercent / 100 + firmPrice;
 		}
 
-
+		public double WorkerPaymentByArea(double architectorCost, double constructorCost, double engineerCost, double apartmentArea)
+		{
+			return (architectorCost + constructorCost + engineerCost) * apartmentArea;
+		}
+		//public static double TotalCost(double K, double M, double R, double T, double O, double A, double S, double Pr, double Ar, double Ko, double In, double De, double Sr)
+		//{
+		//    double materialCost = MaterialCost(K, M);
+		//    double laborCost = LaborCost(R, T) + WorkerPaymentByArea(Ar, Ko, In, De, Sr);
+		//    double companyIncome = CompanyIncome(S, Pr);
+		//    double totalCost = materialCost + laborCost + rentCost + companyIncome;
+		//    return totalCost;
+		//}
 	}
-
 }

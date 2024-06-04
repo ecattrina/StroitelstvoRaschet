@@ -17,9 +17,9 @@ using System.Xml.Linq;
 
 namespace CocreteCalculator.ViewModels
 {
-    public class MaterialViewModel : INotifyPropertyChanged
+    public class BrigadeViewModel : INotifyPropertyChanged
     {
-        public MaterialViewModel()
+        public BrigadeViewModel()
         {
             
         }

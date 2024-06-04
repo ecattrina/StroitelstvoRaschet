@@ -1,0 +1,15 @@
+﻿<Window x:Class="StroitelstvoRaschet.WpfApp.Views.AddBdWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StroitelstvoRaschet.WpfApp.Views"
+        mc:Ignorable="d"
+          Title="Добавление" Height="200" Width="300" FontFamily="Century Gothic">
+    <Grid>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Новый материал" Width="150" Padding="5,5,5,5" Margin="5" Command="{Binding NewMaterialButton_Click}"/>
+            <Button Content="Новая бригада" Width="150" Padding="5,5,5,5" Margin="5" Command="{Binding NewBrigadeButton_Click}"/>
+        </StackPanel>
+    </Grid>
+</Window>
