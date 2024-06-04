@@ -38,5 +38,14 @@ namespace StroitelstvoRaschet.WpfApp.Views
 			DataContext = dbViewModel;
 		}
 
+		private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			// Отменить закрытие окна
+			e.Cancel = true;
+
+			// Скрыть окно вместо закрытия
+			this.Hide();
+		}
+
 	}
 }

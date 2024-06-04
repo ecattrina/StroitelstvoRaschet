@@ -5,15 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StroitelstvoRaschet.WpfApp.Views"
         mc:Ignorable="d"
-        Title="Новый материал" Height="450" Width="800">
-    <Grid>
+        Title="Новый материал" Height="350" Width="400"
+        FontFamily="Century Gothic"
+        Closing="Window_Closing"> 
+    
+    <Grid HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
 
         <!-- Левая сетка -->
-        <Grid Grid.Column="0" Margin="10">
+        <Grid Grid.Column="0" Margin="10" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -42,7 +44,9 @@ ItemsSource="{Binding Brigades}" DisplayMemberPath="Name" SelectedItem="{Binding
             </StackPanel>
 
             <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,0">
-                <ListBox ItemsSource="{Binding Items}" x:Name="myListBox" Width="200" Height="100"/>
+                <ListBox ItemsSource="{Binding Items}" x:Name="myListBox" Width="305
+                         
+                         " Height="100"/>
             </StackPanel>
 
 
