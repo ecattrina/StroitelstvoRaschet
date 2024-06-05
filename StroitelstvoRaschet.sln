@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroitelstvoRaschet.Library", "StroitelstvoRaschet.Library.csproj", "{4BFB1D5A-ED87-48C2-A2DB-3EEBE5B7A3ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StroitelstvoRaschet.Library", "StroitelstvoRaschet.Library\StroitelstvoRaschet.Library.csproj", "{4BFB1D5A-ED87-48C2-A2DB-3EEBE5B7A3ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroitelstvoRaschet.Tests", "..\StroitelstvoRaschet.Tests\StroitelstvoRaschet.Tests.csproj", "{394485D4-F506-452B-90F5-C3916A444AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StroitelstvoRaschet.Tests", "StroitelstvoRaschet.Tests\StroitelstvoRaschet.Tests.csproj", "{394485D4-F506-452B-90F5-C3916A444AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StroitelstvoRaschet.WpfApp", "..\StroitelstvoRaschet.WpfApp\StroitelstvoRaschet.WpfApp.csproj", "{7342ABA6-1130-48DB-9717-A8821440D513}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StroitelstvoRaschet.WpfApp", "StroitelstvoRaschet.WpfApp\StroitelstvoRaschet.WpfApp.csproj", "{7342ABA6-1130-48DB-9717-A8821440D513}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
