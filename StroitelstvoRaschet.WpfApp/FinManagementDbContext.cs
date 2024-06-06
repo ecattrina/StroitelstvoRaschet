@@ -13,13 +13,11 @@ namespace CocreteCalculator.Models
 			}
 			catch (Exception ex)
 			{
-				// Обработка исключения при открытии базы данных
 				Console.WriteLine("Ошибка при открытии базы данных: " + ex.Message);
 			}
 		}
 
 		public DbSet<Brigade> Brigades { get; set; }
-		public DbSet<Calculator> Calculators { get; set; }
 		public DbSet<Material> Materials { get; set; }
 		public DbSet<MaterialBrigade> MaterialBrigades { get; set; }
 	}
