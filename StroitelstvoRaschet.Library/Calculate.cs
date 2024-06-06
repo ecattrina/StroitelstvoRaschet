@@ -105,13 +105,6 @@ namespace CalculatorLib
 		{
 			return (architectorCost + constructorCost + engineerCost) * apartmentArea;
 		}
-		//public static double TotalCost(double K, double M, double R, double T, double O, double A, double S, double Pr, double Ar, double Ko, double In, double De, double Sr)
-		//{
-		//    double materialCost = MaterialCost(K, M);
-		//    double laborCost = LaborCost(R, T) + WorkerPaymentByArea(Ar, Ko, In, De, Sr);
-		//    double companyIncome = CompanyIncome(S, Pr);
-		//    double totalCost = materialCost + laborCost + rentCost + companyIncome;
-		//    return totalCost;
-		//}
+		
 	}
 }

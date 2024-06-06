@@ -18,4 +18,10 @@
     <ProjectReference Include="..\StroitelstvoRaschet.Library\StroitelstvoRaschet.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="database.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
